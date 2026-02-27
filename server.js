@@ -63,7 +63,7 @@ if (req.url === "/api/users" && req.method === "GET") {
 
   messages.forEach(msg => {
     const lastSeen = new Date(msg.time).getTime();
-    if (now - lastSeen < 60000) { // online if active in last 60 sec
+    if (now - lastSeen < 600000) { // online if active in last 60 sec
       online.add(msg.ip);
     } else {
       offline.add(msg.ip);
